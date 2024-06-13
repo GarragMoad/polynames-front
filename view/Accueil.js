@@ -1,30 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page de Jeu</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <div class="background-image"></div>
+export class AccueilView{
+    constructor() {
+      }
+    displayPageHtml() {
+        console.log("Accueil");
+        const accueil = document.getElementById("Accueil");
+        const createJoinPartie=document.getElementById("CreateJoinPartie");
+        const cards=document.getElementById("Accueil");
+        cards.style.display = "none";
+        createJoinPartie.style.display = "none";
+        accueil.innerHTML= `
+        <div class="background-image"></div>
     <div class="header-container">
         <div class="header">
             <img src="pictures/logo.png" alt="Header Image" class="header-image">
             <h1 class="main-title">Beat your friends and prove you are the best!</h1>
         </div>
         <div class="button-container">
-            <a href="Commencer_a_jouer.html">
-                <button class="button" role="button">Start Playing</button>
-            </a>
+                <button class="button" role="button" onclick="displayCreateJoinPartie()" >Start Playing</button>
         </div>
     </div>
 
     <div class="content-wrapper">
         <div class="left-agent">
-            <img src="/pictures/man.png" alt="Left Agent" class="agent-image">
+            <img src="pictures/man.png" alt="Left Agent" class="agent-image">
         </div>
         <div class="rules">
             <h2>Règles du jeu</h2>
@@ -39,10 +37,10 @@
             </ol>
         </div>
         <div class="right-agent">
-            <img src="/pictures/women 2.png" alt="Right Agent" class="agent-image">
+            <img src="pictures/women 2.png" alt="Right Agent" class="agent-image">
         </div>
-    </div>
+        `;
+        
+    }
 
-</body>
-
-</html>
+}

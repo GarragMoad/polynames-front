@@ -1,0 +1,201 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    background-image: url(../pictures/bg_colorful.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body > div {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+fields {
+    width: 100%;
+    height: 70vh; /* Reduced height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for the card container */
+card_parts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+card {
+    border-radius: 10px;
+    border: 2px solid #800000;
+    width: 180px; /* Adjust width */
+    height: 90px; /* Adjust height */
+    margin: 6px; /* Add margin between cards */
+    background-color: #fff; /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem; /* Adjust font size for smaller cards */
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+    cursor: pointer;
+    position: relative; /* Added for overlay */
+}
+
+card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.card.blue, .card.red {
+    background-color: rgba(255, 255, 255, 0); /* Transparent */
+}
+
+.card.blue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.card.red::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 0.5; /* Adjust opacity for hover effect */
+}
+
+.custom-div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.indice-input, .number-selector, .submit-button {
+    flex: 1;
+    height: 1cm; /* Adjust the height as needed */
+    margin: 0 0.5cm; /* Ensure spacing between elements */
+    border-radius: 15px; /* More rounded corners */
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.indice-input:focus, .number-selector:focus, .submit-button:focus {
+    outline: none;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.number-selector {
+    flex: 1;
+    height: 1.2cm; /* Adjusted height */
+    margin: 0 0.5cm;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* Center vertically */
+    padding: 0 10px;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.submit-button {
+    flex: 1;
+    margin: 0 0.5cm;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* text-transform: uppercase; */
+    padding: 0 10px;
+    transition: transform 80ms ease-in;
+    color: #FFFFFF;
+    background-color: #FF4B2B;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.submit-button:active {
+    transform: scale(0.95);
+}
+
+.submit-button.ghost {
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+}
+
+.custom-div > :first-child {
+    margin-left: 0;
+}
+
+.custom-div > :last-child {
+    margin-right: 0;
+}
+
+.score-display {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Adjust margin as needed */
+}
+.code-partie{
+    
+}
+.score-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px; /* Space between text and score */
+}
+
+.score-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4b2b; /* Color for the score value */
+}
